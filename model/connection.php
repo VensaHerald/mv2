@@ -1,4 +1,13 @@
 <?php
+/**
+*
+*basic singleton instance DB connection with DBO
+*
+*
+*/
+
+
+
  class Db{
 	 require_once("deets/deets.php");
 	 
