@@ -22,12 +22,16 @@ class dbHandler{
 		endforeach;
 		return $results;
 		
-		
 	}
 	
-	public static function readID(){
-		
-		
+	public static function readID($id,$table="posts2"){
+		$result;
+		$db=Db::getInstance();
+		$sql = 'SELECT * FROM '.htmlentities($table).' WHERE ID = '.intval($id);
+		$sel=$db->query($sql);
+		// var_dump($sel);
+		$result=$sel->fetch(PDO::FETCH_ASSOC);
+		return new uPost($result['ID'],$result['title'],$result['content'],$result['datepost']);
 	}
 	
 	public static function updateID(){}
