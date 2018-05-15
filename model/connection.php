@@ -5,7 +5,7 @@
 *
 *
 */
-require_once("deets/deets.php");
+require_once("./deets/deets.php");
 
 
  class Db{

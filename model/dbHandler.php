@@ -6,19 +6,16 @@
 *	lite tdg
 *
 */
-require_once("model/connection.php");
+require_once("connection.php");
 
 class dbHandler{
 	public static function insertInto(){}
 	
-	public static function readAll($table="posts2"){
+	public static function readAll($table="posts2",$order="id"){
 		$results=[];
 		$db=Db::getInstance();
-		// $sql = 'SELECT * FROM '.htmlentities($table);
-		// $sel= $db->prepare($sql);
-		// $sel->execute();
-		$sel=$db->query('select * from posts2');
-		
+		$sql = 'SELECT * FROM '.htmlentities($table).' order by '.htmlentities($order);
+		$sel=$db->query($sql);
 		foreach($sel->fetchAll() as $item):
 			$results[] = new uPost($item['ID'],$item['title'],$item['content'],$item['datepost']);
 		
@@ -28,7 +25,10 @@ class dbHandler{
 		
 	}
 	
-	public static function readID(){}
+	public static function readID(){
+		
+		
+	}
 	
 	public static function updateID(){}
 	
