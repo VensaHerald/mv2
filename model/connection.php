@@ -5,12 +5,11 @@
 *
 *
 */
-
+require_once("deets/deets.php");
 
 
  class Db{
-	 require_once("deets/deets.php");
-	 
+	  
 	 private static $instance = null;
 	 
 	 private function __construct(){}
@@ -19,11 +18,11 @@
 	 
 	 public static function getInstance(){
 		 if(!isset(self::$instance)){
-			 
-			 $instance = new PDO('mysql:host=localhost;dbname=mvcrud',$user,$pass);
-		 }
+			 self::$instance = new PDO('mysql:host=localhost;dbname=mvcrud',deets::$user,deets::$pass);
+			  }
 		 
 		 return self::$instance;
 	 }
 	 
  }
+ ?>
