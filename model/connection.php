@@ -18,7 +18,7 @@ require_once("deets/deets.php");
 	 
 	 public static function getInstance(){
 		 if(!isset(self::$instance)){
-			
+			 self::$instance = new PDO('mysql:host=localhost;dbname=mvcrud',deets::$user,deets::$pass);
 			  }
 		 
 		 return self::$instance;
