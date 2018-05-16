@@ -1,0 +1,21 @@
+*{
+	font-family:sans-serif;
+}
+header{
+	margin:1em 2em;
+}
+th{
+	background:lightgrey;
+	
+}
+td{
+	padding:0.5em;
+}
+tr:nth-child(even){
+	background:#94baf7;
+}
+
+a:visited.sort{
+	color:blue;
+	
+}
