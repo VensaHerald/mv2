@@ -38,10 +38,23 @@ class dbHandler{
 		return new uPost($result['ID'],$result['title'],$result['content'],$result['datepost']);
 	}
 	
-	public static function updateID(){}
+	public static function updateID($id,$title,$content,$table="posts2"){
+		$db=Db::getInstance();
+		$now = date("Y-m-d H:i:s");
+		$upd=$db->prepare('UPDATE posts2 SET title="'.$title.'", content="'.$content.'" WHERE ID='.$id);
+		var_dump($upd->execute());
+				
+		
+	}
 	
-	public static function deleteID(){}
-	
+	public static function deleteID($criteria="ID",$id,$table="posts2"){
+		$db=Db::getInstance();
+		$del=$db->prepare('DELETE FROM '.$table.' WHERE '. $criteria.'="'.$id.'"');
+		var_dump($del->execute());
+		
+		
+	}
+	// DELETE FROM posts2 WHERE title='.$id
 }
 ?>
 
