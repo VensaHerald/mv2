@@ -12,6 +12,17 @@ class uPost {
 		$this->content=$content;
 		$this->datepost=$datepost;
 	}
+	private function __clone(){}
+	
+	
+	public function validateCr($title,$content){
+		$errors=[];
+		
+		
+		
+		
+		return new uPost();
+	}
 	
 	
 }

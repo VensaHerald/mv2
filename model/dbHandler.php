@@ -9,6 +9,7 @@
 require_once("connection.php");
 
 class dbHandler{
+	
 	public static function insertInto($title,$content,$table="posts2"){
 		$db=Db::getInstance();
 		$now = date("Y-m-d H:i:s");
@@ -54,7 +55,7 @@ class dbHandler{
 		
 		
 	}
-	// DELETE FROM posts2 WHERE title='.$id
+	
 }
 ?>
 
