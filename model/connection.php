@@ -18,11 +18,12 @@ require_once("./deets/deets.php");
 	 
 	 public static function getInstance(){
 		 if(!isset(self::$instance)){
-			 self::$instance = new PDO('mysql:host=localhost;dbname=mvcrud',deets::$user,deets::$pass);
+			 self::$instance = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASS);
 			  }
+			  
 		 
 		 return self::$instance;
 	 }
 	 
  }
- ?>
+
